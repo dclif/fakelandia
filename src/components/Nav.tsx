@@ -4,13 +4,14 @@ import { NavLink } from "react-router-dom";
 
 const Nav: React.FC = () => {
     return (
-        <section>
-            <ul>
-                <li><NavLink to='/'>Home</NavLink></li>
-                <li><NavLink to='/misdemeanours'>Misdemeanours</NavLink></li>
-                <li><NavLink to='/confessions'>Confess To Us</NavLink></li>
+        <section className="nav">
 
-            </ul>
+            <p>FAKELANDIA <br /> JUSTICE <br /> DEPARTMENT</p>
+            <NavLink className="nav-link" to='/'>Home</NavLink>
+            <NavLink className="nav-link" to='/misdemeanours'>Misdemeanours</NavLink>
+            <NavLink className="nav-link" to='/confessions'>Confess To Us</NavLink>
+
+
         </section>
     )
 }

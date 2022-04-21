@@ -1,3 +1,39 @@
 .App {
   text-align: center;
 }
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 15vh;
+  background-color: rgba(211, 211, 211, 0.865);
+  padding-left: 3em;
+  padding-right: 10em;
+}
+
+.nav-link {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+.nav-link:visited {
+  color: rgba(52, 112, 3, 0.944);
+}
+
+.nav-link:hover {
+  color: blue;
+  text-decoration: underline
+}
+
+.Footer {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 5vh;
+  background-color: rgba(211, 211, 211, 0.865);
+}
