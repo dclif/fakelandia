@@ -4,9 +4,11 @@ import Misdemeanours from "./Misdemeanours";
 import Confessions from "./Confessions";
 import PageNotFound from "./PageNotFound";
 import Layout from "./Layout";
+import MisdemeanourContext from "../misdemeanourContext"
 
-const Router = () => {
-    return (
+const Router = () =>
+
+    <MisdemeanourContext>
         <Routes>
             <Route path="/" element={<Layout />}>
 
@@ -17,7 +19,7 @@ const Router = () => {
 
             </Route>
         </Routes >
-    )
-}
+    </MisdemeanourContext>
+
 
 export default Router

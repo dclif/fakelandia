@@ -1,8 +1,12 @@
 import React from 'react'
+import Table from "./Table"
 
 const Misdemeanours: React.FC = () => {
+
     return (
-        <div>Misdemeanours</div>
+        <div className="table-container">
+            <Table />
+        </div>
     )
 }
 

@@ -27,6 +27,12 @@
   text-decoration: underline
 }
 
+.active {
+  color: purple;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 .Footer {
   position: absolute;
   bottom: 0;
@@ -37,3 +43,21 @@
   height: 5vh;
   background-color: rgba(211, 211, 211, 0.865);
 }
+
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.table {
+  width: 50vw;
+  text-align: center;
+
+}
+
+.td {
+  /* border-left: 1px solid; */
+  padding: 0.3em;
+}
+
