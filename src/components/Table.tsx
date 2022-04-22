@@ -1,16 +1,32 @@
 import { useMisdemeanours } from "../misdemeanourContext"
+import React, { useState } from 'react'
+
 
 const Table = () => {
 
+
+
+
     const MisList = useMisdemeanours();
 
-    const column = Object.keys(MisList[0]);
+    const [lesMis, setLesMis] = useState<any[]>(MisList);
+
+    const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        const { value } = e.target;
+        const newMis = MisList.filter((x: any) => x.misdemeanour === value)
+        setLesMis(newMis)
+
+    }
+
+    console.log(lesMis)
+
+    const column = Object.keys(lesMis[0]);
     column.push("last")
 
     const tdData = () => {
 
 
-        return MisList.map((data: any) => {
+        return lesMis.map((data: any) => {
             const randNum = Math.floor(Math.random() * (50 - 40) + 40);
             const randPic = `https://picsum.photos/${randNum}/${randNum}`
 
@@ -31,17 +47,25 @@ const Table = () => {
         })
     }
     return (
-        <table className="table">
-            <thead >
-                <th>Citizen ID</th>
-                <th>Misdemeanour</th>
-                <th>Date</th>
-                <th>Punishment Idea</th>
-            </thead>
-            <tbody >
-                {tdData()}
-            </tbody>
-        </table>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+            <select style={{ width: "10%" }} onChange={handleChange}>
+                <option selected value="rudeness">🤪</option>
+                <option value="lift">🗣</option>
+                <option value="vegetables">🥗</option>
+                <option value="united">😈</option>
+            </select>
+            <table className="table">
+                <thead >
+                    <th>Citizen ID</th>
+                    <th>Misdemeanour</th>
+                    <th>Date</th>
+                    <th>Punishment Idea</th>
+                </thead>
+                <tbody >
+                    {tdData()}
+                </tbody>
+            </table>
+        </div >
     )
 }
 
