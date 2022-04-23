@@ -18,8 +18,6 @@ const Table = () => {
 
     }
 
-    console.log(lesMis)
-
     const column = Object.keys(lesMis[0]);
     column.push("last")
 
@@ -48,11 +46,12 @@ const Table = () => {
     }
     return (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-            <select style={{ width: "10%" }} onChange={handleChange}>
+            <select style={{ width: "30%", fontSize: "1.5em", textAlign: "center" }} onChange={handleChange}>
                 <option selected value="rudeness">🤪</option>
                 <option value="lift">🗣</option>
                 <option value="vegetables">🥗</option>
                 <option value="united">😈</option>
+                <option value="All">Show All</option>
             </select>
             <table className="table">
                 <thead >

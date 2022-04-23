@@ -7,24 +7,27 @@ const defaultValues = {
 
 };
 
+
+
 const Form = () => {
 
     const [inputs, setInputs] = useState(defaultValues);
+    const [buttonState, setButtonState] = useState(true);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
-
         setInputs(values => ({ ...values, [name]: value }))
+        if (inputs.subject.length > 0 && inputs.reason.length > 0 && inputs.details.length > 0) { setButtonState(false) }
     }
 
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
-        console.log(inputs)
 
         setInputs(defaultValues)
-
+        setButtonState(true)
     }
+
     return (
         <div className="form-container" >
             <form onSubmit={handleSubmit}>
@@ -56,7 +59,7 @@ const Form = () => {
                         onChange={handleChange}
                     />
                 </label>
-                <input type="submit" value="Confess" />
+                <input type="submit" value="Confess" disabled={buttonState} className={`submit ${buttonState === false ? "submit" : "disabled"}`} />
             </form>
         </div>
     )
