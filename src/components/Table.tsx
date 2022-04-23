@@ -13,7 +13,7 @@ const Table = () => {
 
     const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const { value } = e.target;
-        const newMis = MisList.filter((x: any) => x.misdemeanour === value)
+        let newMis = MisList.filter((x: any) => x.misdemeanour === value).length === 0 ? MisList : MisList.filter((x: any) => x.misdemeanour === value)
         setLesMis(newMis)
 
     }
