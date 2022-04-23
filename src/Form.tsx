@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useMisdemeanours } from "./misdemeanourContext"
 
 const defaultValues = {
     subject: "",
@@ -7,9 +8,15 @@ const defaultValues = {
 
 };
 
+function rand(x: number): number {
+    return Math.random() * x;
+}
+
 
 
 const Form = () => {
+
+    const MisList = useMisdemeanours();
 
     const [inputs, setInputs] = useState(defaultValues);
     const [buttonState, setButtonState] = useState(true);
@@ -23,7 +30,16 @@ const Form = () => {
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
-
+        if (inputs.reason === "talk") {
+            console.log(inputs.details)
+        }
+        else {
+            MisList.push({
+                citizenId: Math.floor(1 + rand(37) * rand(967)),
+                misdemeanour: inputs.reason,
+                date: new Date().toLocaleDateString(),
+            })
+        }
         setInputs(defaultValues)
         setButtonState(true)
     }
@@ -46,7 +62,7 @@ const Form = () => {
                         name="reason"
                         value={inputs.reason}
                         onChange={handleChange}>
-                        <option selected value="rudeness">🤪</option>
+                        <option defaultValue="rudeness">🤪</option>
                         <option value="lift">🗣</option>
                         <option value="vegetables">🥗</option>
                         <option value="united">😈</option>

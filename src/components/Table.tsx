@@ -43,7 +43,7 @@ const Table = () => {
     return (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
             <select style={{ width: "30%", fontSize: "1.5em", textAlign: "center" }} onChange={handleChange}>
-                <option selected value="rudeness">🤪</option>
+                <option defaultValue="rudeness">🤪</option>
                 <option value="lift">🗣</option>
                 <option value="vegetables">🥗</option>
                 <option value="united">😈</option>
