@@ -4,9 +4,6 @@ import React, { useState } from 'react'
 
 const Table = () => {
 
-
-
-
     const MisList = useMisdemeanours();
 
     const [lesMis, setLesMis] = useState<any[]>(MisList);
@@ -15,7 +12,6 @@ const Table = () => {
         const { value } = e.target;
         let newMis = MisList.filter((x: any) => x.misdemeanour === value).length === 0 ? MisList : MisList.filter((x: any) => x.misdemeanour === value)
         setLesMis(newMis)
-
     }
 
     const column = Object.keys(lesMis[0]);

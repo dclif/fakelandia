@@ -42,6 +42,7 @@ const Form = () => {
                 </label>
                 <label>Reason:
                     <select
+                        style={{ textAlign: 'center', fontSize: "1em" }}
                         name="reason"
                         value={inputs.reason}
                         onChange={handleChange}>
@@ -52,8 +53,9 @@ const Form = () => {
                         <option value="talk">I just want to talk</option>
                     </select>
                 </label>
-                <label>Enter the year of birth:
+                <label>Reason for contact:
                     <textarea
+                        style={{ width: "100%", height: "6em" }}
                         name="details"
                         value={inputs.details}
                         onChange={handleChange}
