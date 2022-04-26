@@ -26,7 +26,7 @@ To run and test the application:
 npm start & npm test
 ```
 
-You should then be able to access the default application by opening the browser and visiting
+You should then be able to access the application by opening the browser and visiting
 
 [http://localhost:3000](http://localhost:3000)
 
