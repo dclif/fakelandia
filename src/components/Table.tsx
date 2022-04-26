@@ -14,8 +14,11 @@ const Table = () => {
         setLesMis(newMis)
     }
 
-    const column = Object.keys(lesMis[0]);
+    const column: any = Object.keys(lesMis[0]);
     column.push("last")
+
+    console.log(column)
+    console.log(lesMis[0])
 
     const tdData = () => {
 
@@ -27,13 +30,13 @@ const Table = () => {
             return (
                 <tr  >
                     {
-                        column.map((v) => {
+                        column.map((v: any, index: any) => {
 
                             if (v === "last") {
-                                return <td className="td"><img alt="random" src={randPic} /></td>
+                                return <td key={index} className="td"><img alt="random" src={randPic} /></td>
                             }
 
-                            return <td className="td">{data[v] === "lift" ? "🗣" : data[v] === "rudeness" ? "🤪" : data[v] === "vegetables" ? "🥗" : data[v] === "united" ? "😈" : data[v]}</td>
+                            return <td key={index} className="td">{data[v] === "lift" ? "🗣" : data[v] === "rudeness" ? "🤪" : data[v] === "vegetables" ? "🥗" : data[v] === "united" ? "😈" : data[v]}</td>
                         })
                     }
                 </tr>
@@ -51,10 +54,12 @@ const Table = () => {
             </select>
             <table className="table">
                 <thead >
-                    <th>Citizen ID</th>
-                    <th>Misdemeanour</th>
-                    <th>Date</th>
-                    <th>Punishment Idea</th>
+                    <tr>
+                        <th>Citizen ID</th>
+                        <th>Misdemeanour</th>
+                        <th>Date</th>
+                        <th>Punishment Idea</th>
+                    </tr>
                 </thead>
                 <tbody >
                     {tdData()}

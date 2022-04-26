@@ -6,7 +6,7 @@ import PageNotFound from "./PageNotFound";
 import Layout from "./Layout";
 import MisdemeanourContext from "../misdemeanourContext"
 
-const Router = () =>
+const MainRouter = () =>
 
     <MisdemeanourContext>
         <Routes>
@@ -22,4 +22,4 @@ const Router = () =>
     </MisdemeanourContext>
 
 
-export default Router
+export default MainRouter
