@@ -10,7 +10,7 @@ const MainRouter = () =>
 
     <MisdemeanourContext>
         <Routes>
-            <Route path="/" element={<Layout />}>
+            <Route element={<Layout />}>
 
                 <Route index element={<Home />} />
                 <Route path="misdemeanours" element={<Misdemeanours />} />

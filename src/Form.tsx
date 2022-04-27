@@ -34,7 +34,7 @@ const Form = () => {
         }
 
         else {
-            const randNum = Math.floor(Math.random() * (50 - 40) + 40);
+            const randNum = Math.floor(Math.random() * (300 - 1) + 1);
             const randPic = `https://picsum.photos/id/${randNum}/50`
             MisList.push({
                 citizenId: Math.floor(1 + rand(37) * rand(967)),

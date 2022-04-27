@@ -17,7 +17,7 @@ export default async function generateMisdemeanours(
 	const misdemeanours : any = [];
 
 	for (let i = 0; i < amount; i++) {
-		const randNum = Math.floor(Math.random() * (50 - 40) + 40);
+		const randNum = Math.floor(Math.random() * (300 - 1) + 1);
         const randPic = `https://picsum.photos/id/${randNum}/50`
 		misdemeanours.push({
 			citizenId: Math.floor(i + rand(37) * rand(967)),
