@@ -24,6 +24,7 @@ const MisdemeanourContext: any = ({ children }: { children: ReactNode }) => {
 
     const getMisdemeanours = async () => {
         const response = await generateMisdemeanours(5)
+
         setMis(response)
 
     };

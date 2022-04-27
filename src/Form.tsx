@@ -27,17 +27,20 @@ const Form = () => {
         if (inputs.subject.length > 0 && inputs.reason.length > 0 && inputs.details.length > 0) { setButtonState(false) }
     }
 
-
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
         if (inputs.reason === "talk") {
             console.log(inputs.details)
         }
+
         else {
+            const randNum = Math.floor(Math.random() * (50 - 40) + 40);
+            const randPic = `https://picsum.photos/id/${randNum}/50`
             MisList.push({
                 citizenId: Math.floor(1 + rand(37) * rand(967)),
                 misdemeanour: inputs.reason,
                 date: new Date().toLocaleDateString(),
+                src: randPic,
             })
         }
         setInputs(defaultValues)
